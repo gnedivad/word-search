@@ -1,0 +1,25 @@
+body {
+  font: 14px/1.4 "Roboto", Arial, Sans-serif;
+  background-color: #fffafa;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Quicksand", Arial, Sans-serif;
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+#top-bar {
+  width: 100%;
+  background-color: #dbd7d2; /* Timberwolf */
+  border-top: 5px solid #36454f; /* Charcoal */
+  padding: 10px 0px;
+  text-align: center;
+}
+
+#container {
+  overflow: hidden;
+  width: 1125px;
+  margin: 40px auto 80px;
+}
