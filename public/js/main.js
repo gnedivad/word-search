@@ -51,7 +51,7 @@
         'class': 'notification',
         'text': 'Your grid must be non-empty!'
       });
-      $topBar.prepend($notification);
+      $topBar.html($notification);
       return;
     };
     var isInvalidGrid = grid.some(function(row) {
@@ -62,7 +62,7 @@
         'class': 'notification',
         'text': 'Your grid must be rectanglar!'
       });
-      $topBar.prepend($notification);
+      $topBar.html($notification);
       return;
     }
 
