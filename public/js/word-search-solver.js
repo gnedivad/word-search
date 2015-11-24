@@ -11,7 +11,7 @@
         callback(request.responseText);
       }
     });
-    request.open('GET', '/api/' + string, true);
+    request.open('GET', 'api/' + string, true);
     request.send();
   }
 
