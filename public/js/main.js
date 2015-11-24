@@ -11,6 +11,7 @@
   $grid = $body.find('#grid');
   var $solveBtn = $body.find('button[name="solve"]');
   var $words = $body.find('#words');
+  var $topBar = $body.find('#top-bar');
 
   var getTile = function($grid, r, c) {
     var $row = $($grid.find('tr')[r]);
@@ -46,14 +47,22 @@
     // Validates grid is non-empty rectanglar
     var isInvalidGrid = grid.length <= 0 || grid[0].length <= 0;
     if (isInvalidGrid) {
-      console.log('Your grid must be non-empty!');
+      var $notification = $('<div />', { 
+        'class': 'notification',
+        'text': 'Your grid must be non-empty!'
+      });
+      $topBar.prepend($notification);
       return;
     };
     var isInvalidGrid = grid.some(function(row) {
       return row.length !== grid[0].length;
     });
     if (isInvalidGrid) {
-      console.log('Your grid must be rectanglar!');
+      var $notification = $('<div />', { 
+        'class': 'notification',
+        'text': 'Your grid must be rectanglar!'
+      });
+      $topBar.prepend($notification);
       return;
     }
 

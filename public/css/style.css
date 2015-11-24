@@ -11,17 +11,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #top-bar {
+  height: 25px;
   width: 100%;
   background-color: #dbd7d2; /* Timberwolf */
   border-top: 5px solid #36454f; /* Charcoal */
-  padding: 10px 0px;
+  padding: 0 0 10px;
   text-align: center;
+
+  -webkit-animation: 2s;
 }
 
 #container {
-  overflow: hidden;
   width: 1000px;
-  margin: 40px auto 80px;
+  margin: 10px auto 80px;
+  text-align: center;
+
 }
 
 ul {
@@ -30,9 +34,7 @@ ul {
 }
 
 #words {
-  columns: 2;
   -webkit-columns: 2;
-  -moz-columns: 2;
 }
 
 .left-column {
@@ -44,6 +46,8 @@ ul {
   width: calc(100% - 200px);
   float: left;
 }
+
+/* Grid */
 
 #grid {
   margin: 0 auto;
@@ -57,11 +61,18 @@ ul {
 }
 
 #grid td.active-td {
-  border: 1px solid red;
+  background-color: #dbd7d2;
+  -webkit-animation: blinker 2s linear infinite;
 }
 
 #grid td.highlight {
-  background-color: red;
+  background-color: #d7bfc7;
+}
+
+@-webkit-keyframes blinker {
+  0% { opacity: 0.0; }
+  90% { opacity: 1.0; }
+
 }
 
 button {
@@ -69,13 +80,14 @@ button {
   padding: 4px 10px;
   border: 1px solid black;
   width: 100%;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
   outline: none;
+  margin: 5px 0 0;
+
+  -webkit-transition: 0.4s;
 }
 
 button:hover {
-  background: #36454f;
+  background-color: #36454f;
   color: #fffafa;
 }
 
@@ -116,5 +128,29 @@ button:hover {
 @media (max-width: 600px) {
   #container {
     width: 400px;
+  }
+}
+
+/* Notifications */
+.notification {
+  width: 400px;
+  margin: 0 auto;
+  z-index: 3;
+  padding: 0 10px 5px;
+  background-color: #36454f;
+  color: #fffafa;
+
+  -webkit-animation-name: dropHeader;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-duration: 0.3s;
+}
+
+@-webkit-keyframes dropHeader {
+  0% {
+    -webkit-transform: translateY(-40px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
   }
 }
