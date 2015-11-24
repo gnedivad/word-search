@@ -1,6 +1,6 @@
 {
   "name": "node",
-  "description": "A boilerplate for node applications",
+  "description": "A word search application",
   "author": "David Eng <gnedivad@gmail.com>",
   "version": "0.0.1",
   "engines": {

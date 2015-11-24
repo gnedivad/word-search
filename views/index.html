@@ -5,17 +5,35 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Quicksand|Roboto:100" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,700" />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
+
   </head>
   <body>
     <div id="top-bar">
-      <h1>Word Search</h1>
+      <h1>[ Insert Word Search Tool Pun ]</h1>
     </div>
 
-    <div id="container"></div>
+    <div id="container">
+      <div class="left-column">
+        <button type="button" name="solve">Solve</button>
+        <ul id="words"></ul>
+      </div>
+      <div class="right-column">
+        <table id="grid">
+          <tr>
+            <td class="active-td"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
 
-    <script type="text/javascript" src="js/index.js"></script>
+    <!-- Libraries -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    
+    <!-- Main -->
+    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/word-search-solver.js"></script>
   </body>
 </html>

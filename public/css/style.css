@@ -1,12 +1,12 @@
 body {
-  font: 14px/1.4 "Roboto", Arial, Sans-serif;
+  font: 14px/1.4 "Roboto Slab", Arial, Sans-serif;
   background-color: #fffafa;
   color: #333;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Quicksand", Arial, Sans-serif;
-  font-weight: normal;
+  font-family: "Roboto Slab", Arial, Sans-serif;
+  font-weight: 700;
   line-height: 1.2;
 }
 
@@ -20,6 +20,101 @@ h1, h2, h3, h4, h5, h6 {
 
 #container {
   overflow: hidden;
-  width: 1125px;
+  width: 1000px;
   margin: 40px auto 80px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#words {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
+.left-column {
+  width: 200px;
+  float: left;
+}
+
+.right-column {
+  width: calc(100% - 200px);
+  float: left;
+}
+
+#grid {
+  margin: 0 auto;
+}
+
+#grid td {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  /* background-color: gray; */
+}
+
+#grid td.active-td {
+  border: 1px solid red;
+}
+
+#grid td.highlight {
+  background-color: red;
+}
+
+button {
+  background: none;
+  padding: 4px 10px;
+  border: 1px solid black;
+  width: 100%;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  outline: none;
+}
+
+button:hover {
+  background: #36454f;
+  color: #fffafa;
+}
+
+@media (max-width: 1200px) {
+  #container {
+    width: 800px;
+  }
+}
+
+@media (max-width: 900px) {
+  #container {
+    width: 600px;
+  }
+
+  .left-column {
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
+
+  .right-column {
+    width: 100%;
+    float: none;
+  }
+
+  #words {
+    columns: 6;
+    -webkit-columns: 6;
+    -moz-columns: 6;
+  }
+
+  button[name="solve"] {
+    margin: 0 auto;
+    width: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  #container {
+    width: 400px;
+  }
 }
