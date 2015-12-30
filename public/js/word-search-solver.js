@@ -1,6 +1,7 @@
 (function(window, document, undefined) {
 
   /* Private helpers */
+  var counter = 0;
 
   var getStringMeta = function(string, callback) {
     var request = new XMLHttpRequest();
@@ -21,7 +22,17 @@
   }
 
   var findAllWordsHelper = function(callback, grid, words, string, r, c, dr, dc) {
+    counter++;
+    // console.log('Incremented to', counter);
     if (!inBounds(grid, r, c)) {
+      counter--;
+      // console.log('Decremented to', counter);
+      if (counter === 0) {
+        var d2 = new Date();
+        var n2 = d2.getTime();
+
+        console.log((n2 - n1) / 1000);
+      }
       return;
     }
     var newString = string + grid[r][c];
@@ -40,6 +51,14 @@
       if (result.isPrefix) {
         findAllWordsHelper(callback, grid, words, newString, r + dr, c + dc, dr, dc);
       }
+      counter--;
+      // console.log('Decremented to', counter);
+      if (counter === 0) {
+        var d2 = new Date();
+        var n2 = d2.getTime();
+
+        console.log((n2 - n1) / 1000);
+      }
     });
   }
 
@@ -54,6 +73,8 @@
    * calls `callback` on each item pushed to the array.
    */
   WordSearchSolver.prototype.findAllWords = function(callback) {
+    d1 = new Date();
+    n1 = d1.getTime();
     for (var r = 0; r < this.grid.length; r++) {
       for (var c = 0; c < this.grid[0].length; c++) {
         for (var dr = -1; dr <= 1; dr++) {
